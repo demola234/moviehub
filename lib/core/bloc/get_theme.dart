@@ -1,5 +1,4 @@
 import 'package:moviehub/extentions/colors.dart';
-import 'package:moviehub/model/profile_response.dart';
 import 'package:rxdart/subjects.dart';
 
 class ThemeBloc {
