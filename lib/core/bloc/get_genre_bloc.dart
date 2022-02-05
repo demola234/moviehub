@@ -1,6 +1,5 @@
 import 'package:moviehub/core/repository/movie_repository.dart';
 import 'package:moviehub/model/genre_response.dart';
-import 'package:moviehub/model/movie_response.dart';
 import 'package:rxdart/subjects.dart';
 
 class GenreListBloc {
