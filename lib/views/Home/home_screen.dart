@@ -10,6 +10,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+
+        Container(
+          child: Text("Hello", 
+          style: TextStyle(
+            color: Colors.redAccent, 
+            decoration: TextDecoration.none
+            ),
+          ),
+        )
+      ],
+    );
   }
 }
