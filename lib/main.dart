@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moviehub/views/Home/home_screen.dart';
+import 'extentions/routers.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MovieHub',
       initialRoute: "/",
-      routes: {
-        'homescreen' : (context) => HomeScreen()
-      },
+      routes: routes,
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
