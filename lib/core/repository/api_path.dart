@@ -1,1 +1,2 @@
-final String api = "6bc047b88f669d1fb86574f06381005d93d3517a";
+// ignore: non_constant_identifier_names
+final String api_key = "47835040e5b6e12f164773237b0d48ea";
