@@ -8,11 +8,10 @@ class MovieResponse {
 
   MovieResponse.fromJson(Map<String, dynamic> json)
       : movies = (json["results"] as List)
-            .map((i) => new Movies.fromJson(i))
-            .toList(),
+            .map((i) => new Movies.fromJson(i)).toList(),
         error = "";
 
   MovieResponse.withError(String errorVaule)
-      : movies = List.empty(),
+      : movies = [],
         error = errorVaule;
 }

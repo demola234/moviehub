@@ -1,14 +1,14 @@
- import 'package:moviehub/model/movies.dart';
+ import 'package:moviehub/model/genre.dart';
 
 class GenreResponse {
-  final List<Movies> genre;
+  final List<Genre> genre;
   final String error;
 
   GenreResponse(this.genre, this.error);
 
   GenreResponse.fromJson(Map<String, dynamic> json)
       : genre = (json["results"] as List)
-            .map((i) => new Movies.fromJson(i))
+            .map((i) => new Genre.fromJson(i))
             .toList(),
         error = "";
  

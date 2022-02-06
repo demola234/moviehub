@@ -22,8 +22,8 @@ class Movies {
         popularity = json["popularity"],
         title = json["title"],
         backPoster = json["backdrop_path"],
-        poster = json["poster"],
-        rating = json["rating"].toDouble(),
+        poster = json["poster"] ?? "",
+        rating = json["rating"] ?? 0.0,
         overview = json["overview"]; 
 
    Map<String, dynamic> toJson() => {
