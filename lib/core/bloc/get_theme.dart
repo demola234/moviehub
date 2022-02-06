@@ -1,4 +1,4 @@
-import 'package:moviehub/extentions/colors.dart';
+import 'package:moviehub/extentions/theme.dart';
 import 'package:rxdart/subjects.dart';
 
 class ThemeBloc {
@@ -15,4 +15,3 @@ class ThemeBloc {
   Function(AppTheme) get inTheme => _theme.sink.add;
   Stream<AppTheme> get outTheme => _theme.stream;
 }
-
