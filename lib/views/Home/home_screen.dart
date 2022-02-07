@@ -55,12 +55,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildErrorWidget(String error) {
-    return Center(
-      child: Column(
+    return  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [showErrorDialog(error)]),
-    );
+          children: [
+            SizedBox(
+              child: Text("An Error Occured", style: TextStyle(color: Colors.white, fontSize: 10, decoration: TextDecoration.none),),
+            )
+          ],
+        
+      
+            );
   }
 
   Widget _buildMovieWidget(MovieResponse response) {
@@ -87,27 +92,29 @@ class _HomeScreenState extends State<HomeScreen> {
             align: IndicatorAlign.bottom,
             indicatorSpace: 8.0,
             padding: EdgeInsets.all(8.0),
-            indicatorColor: Colors.blue,
-            indicatorSelectorColor: Colors.blueAccent,
+            indicatorColor: Colors.grey,
+            indicatorSelectorColor: Colors.blue,
             length: movies.take(5).length,
             child: PageView.builder(
                 itemCount: movies.take(5).length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Container(
-                    child: Stack(
-                      children: [
-                        Container(
-                          width: fullWidth(context),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://image.tmdb.org/t/p/original/" +
-                                          movies[index].backPoster))),
-                        ),
-                        // Text(movies[index].title)
-                      ],
+                  return SafeArea(
+                    child: Container(
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: fullWidth(context),
+                            decoration: BoxDecoration(
+                                // shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        "https://image.tmdb.org/t/p/original/" +
+                                            movies[index].backPoster))),
+                          ),
+                          
+                        ],
+                      ),
                     ),
                   );
                 })),

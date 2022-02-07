@@ -33,7 +33,7 @@ class CustomDialogs{
               padding: EdgeInsets.zero,
               margin: EdgeInsets.zero,
               alignment: Alignment.center,
-              child:  Lottie.asset("/success.json",repeat: false),
+              child:  Lottie.asset("assets/Error.json",repeat: false),
             ),
             SizedBox(height: 16,),
             Container(
