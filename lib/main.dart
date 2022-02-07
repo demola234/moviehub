@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moviehub/extentions/theme.dart';
 import 'package:moviehub/views/Home/home_screen.dart';
 import 'extentions/routers.dart';
 

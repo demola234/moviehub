@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:moviehub/core/repository/api_path.dart';
 import 'package:moviehub/model/genre_response.dart';
 import 'package:moviehub/model/movie_response.dart';
 import 'package:moviehub/model/profile_response.dart';

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moviehub/core/bloc/get_genre_bloc.dart';
 import 'package:moviehub/core/bloc/get_movie_bloc.dart';
+import 'package:moviehub/extentions/customs_errors.dart';
 import 'package:moviehub/extentions/helper.dart';
-import 'package:moviehub/model/genre_response.dart';
 import 'package:moviehub/model/movie_response.dart';
 import 'package:moviehub/model/movies.dart';
 import 'package:page_indicator/page_indicator.dart';
@@ -58,16 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildErrorWidget(String error) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: SizedBox(
-              child: Text("Error $error", style: TextStyle(color: Colors.white, fontSize: 8),),
-            ),
-          )
-        ],
-      ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [showErrorDialog(error)]),
     );
   }
 
@@ -108,16 +100,31 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           width: fullWidth(context),
                           decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: NetworkImage("https://image.tmdb.org/t/p/original/" + movies[index].backPoster))
-                          ),
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://image.tmdb.org/t/p/original/" +
+                                          movies[index].backPoster))),
                         ),
                         // Text(movies[index].title)
-                    ],),
+                      ],
+                    ),
                   );
                 })),
       );
     }
+  }
+
+  showErrorDialog(message) {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true,
+        builder: (BuildContext context) {
+          return Container(
+            height: 200, 
+            width: 400,
+          );
+        });
   }
 }
